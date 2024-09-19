@@ -1,8 +1,6 @@
-w = dict()
-final_w = dict()
+w, final_w = {}, {}
 total = 0
-N = int(input())
-lst = [input() for _ in range(N)]
+lst = [input() for _ in range(int(input()))]
 
 for value in lst:
     for idx, val in enumerate(value[::-1]):
