@@ -3,10 +3,10 @@ def func(arr : int) -> int:
     for arr_ in arr:
         temp = 0
         for idx in range(len(arr_) - 1):
-            current, future = arr_[idx], arr_[idx+1]
-            if current == future and current != 'X':
+            cur, nex = arr_[idx], arr_[idx+1]
+            if cur == nex and cur != 'X':
                 temp += 1
-            elif temp > 0 and current != future:
+            elif temp > 0 and cur != nex:
                 temp = 0
                 total += 1
         if temp > 0:
@@ -14,13 +14,13 @@ def func(arr : int) -> int:
     return total
 
 N = int(input())
-arr = []
-temp = [[0] * N for _ in range(N)]
+ver = []
+hori = [[0] * N for _ in range(N)]
 for _ in range(N):
-    arr.append(input())
+    ver.append(input())
     
-for x in range(len(arr)):
-    for y in range(len(arr)):
-        temp[x][y] = arr[y][x]
+for x in range(N):
+    for y in range(N):
+        hori[x][y] = ver[y][x]
     
-print(func(arr), func(temp))
+print(func(ver), func(hori))
