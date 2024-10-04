@@ -2,21 +2,14 @@ import sys
 input = sys.stdin.readline
 
 def func(n : int, m : int):
-    total_value = 0
-    total_lst = []
-    
-    dic = {}
-    
-    # n_lst = [input() for _ in range(n+m)]
-    #　m_lst = [input() for _ in range(m)][1:]
-    
+    dic = {} 
     for _ in range(n+m):
         name = input().rstrip()
         if name not in dic:
             dic[name] = 1
         elif name in dic:
             dic[name] += 1
-            
+    
     dic = dict(sorted(dic.items()))
             
     temp = []
@@ -26,10 +19,9 @@ def func(n : int, m : int):
             temp.append(key)
             count += 1
 
-    return count, temp
+    print(count)
+    for name in temp:
+        print(name)
         
 N, M = map(int, input().split())
-value, lst = func(N, M)
-print(value)
-for name in lst:
-    print(name)
+func(N, M)
