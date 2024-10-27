@@ -1,3 +1,5 @@
+# https://lazy-man.tistory.com/38
+
 import sys
 input = sys.stdin.readline
 
