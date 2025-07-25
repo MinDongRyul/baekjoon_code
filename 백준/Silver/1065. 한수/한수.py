@@ -1,10 +1,2 @@
 N = int(input())
-if N < 100:
-    print(N)
-else:
-    T = 99
-    for x in range(100, N+1):
-        x = str(x)
-        if int(x[0]) - int(x[1]) == int(x[1]) - int(x[2]):
-            T += 1
-    print(T)
+print(len(list(filter(lambda a : a < 100 or 2 * int(str(a)[1]) == int(str(a)[0]) + int(str(a)[2]), [i for i in range(1, N+1)]))))
